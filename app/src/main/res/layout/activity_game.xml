@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cat_cream">
+
+    <!-- Round header bar -->
+    <LinearLayout
+        android:id="@+id/layoutRoundHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/cat_orange"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBackToMenu"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:minWidth="0dp"
+            android:padding="4dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/tvRoundLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="Runda 1/24"/>
+
+        <TextView
+            android:id="@+id/tvCardsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginEnd="12dp"
+            android:text="1 carte"/>
+
+        <TextView
+            android:id="@+id/tvTrumpLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cat_yellow"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Atu: ♠"/>
+
+    </LinearLayout>
+
+    <!-- Phase title -->
+    <TextView
+        android:id="@+id/tvPhaseTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bidding_title"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/cat_brown"
+        android:gravity="center"
+        android:padding="12dp"/>
+
+    <!-- Cat mascot -->
+    <ImageView
+        android:id="@+id/ivCatMood"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_cat_thinking"
+        android:contentDescription="@string/app_name"/>
+
+    <!-- ViewFlipper: 0=bidding, 1=tricks -->
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Bidding view (child 0): one player at a time -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Previous bids label -->
+            <TextView
+                android:id="@+id/tvPreviousBidsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/previous_bids_label"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:visibility="gone"
+                android:layout_marginBottom="4dp"/>
+
+            <!-- Previous bids list -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPreviousBids"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone"/>
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <!-- Current bidder card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvCurrentBidderName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/cat_brown"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBidderIsDealer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dealer_label"
+                        app:chipBackgroundColor="@color/cat_orange"
+                        android:textColor="@color/white"
+                        android:visibility="gone"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvBidForbidden"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textColor="@color/error_red"
+                        android:visibility="gone"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- Bid picker -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginVertical="12dp">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnBidMinus"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:text="−"
+                            android:padding="0dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"/>
+
+                        <TextView
+                            android:id="@+id/tvBidValue"
+                            android:layout_width="72dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/cat_brown"
+                            android:gravity="center"
+                            android:text="0"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnBidPlus"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:text="+"
+                            android:padding="0dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"/>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSubmitBid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/submit_bid"
+                        android:backgroundTint="@color/cat_orange"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Bottom spacer -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <!-- Tricks view (child 1) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTricks"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="8dp"/>
+
+            <TextView
+                android:id="@+id/tvTricksValidation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:padding="4dp"
+                android:textColor="@color/cat_brown"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirmTricks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm_tricks"
+                android:backgroundTint="@color/cat_orange"
+                android:textColor="@color/white"
+                android:layout_margin="16dp"/>
+
+        </LinearLayout>
+
+    </ViewFlipper>
+
+    <!-- Scoreboard buttons row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToggleScoreboard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="▲ Scoreboard"
+            android:textColor="@color/cat_brown"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDetailedScoreboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="@string/detailed_scoreboard_btn"
+            android:textColor="@color/cat_brown"/>
+
+    </LinearLayout>
+
+    <!-- Collapsible scoreboard -->
+    <LinearLayout
+        android:id="@+id/layoutScoreboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:elevation="4dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvScoreboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="180dp"
+            android:nestedScrollingEnabled="false"/>
+
+    </LinearLayout>
+
+    <!-- Round result overlay -->
+    <FrameLayout
+        android:id="@+id/layoutRoundResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/round_result_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/cat_brown"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRoundResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+
+            <TextView
+                android:id="@+id/tvPremiuAnnouncement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/cat_orange"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNextRound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/next_round"
+                android:backgroundTint="@color/cat_orange"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

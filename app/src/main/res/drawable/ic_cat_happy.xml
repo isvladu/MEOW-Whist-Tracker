@@ -1,0 +1,61 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- Body -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M30,70 Q30,95 60,95 Q90,95 90,70 L90,55 Q90,40 75,35 Q70,33 60,33 Q50,33 45,35 Q30,40 30,55 Z"/>
+    <!-- Paws up -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M20,55 Q10,45 15,35 Q18,28 28,38 L35,50 Z"/>
+    <path android:fillColor="#FF8C42"
+        android:pathData="M100,55 Q110,45 105,35 Q102,28 92,38 L85,50 Z"/>
+    <!-- Head -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M25,45 Q25,20 60,20 Q95,20 95,45 Q95,65 60,65 Q25,65 25,45 Z"/>
+    <!-- Left ear -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M30,30 L20,10 L45,25 Z"/>
+    <!-- Right ear -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M90,30 L100,10 L75,25 Z"/>
+    <!-- Left ear inner -->
+    <path android:fillColor="#FFD166"
+        android:pathData="M31,28 L23,13 L42,26 Z"/>
+    <!-- Right ear inner -->
+    <path android:fillColor="#FFD166"
+        android:pathData="M89,28 L97,13 L78,26 Z"/>
+    <!-- Happy eyes (arcs) -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="3" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M40,44 Q45,38 50,44"/>
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="3" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M70,44 Q75,38 80,44"/>
+    <!-- Nose -->
+    <path android:fillColor="#EF476F"
+        android:pathData="M57,50 L60,53 L63,50 Q60,47 57,50 Z"/>
+    <!-- Big smile -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="2" android:fillColor="#00000000"
+        android:pathData="M50,54 Q60,63 70,54"/>
+    <!-- Rosy cheeks (approx circles with path) -->
+    <path android:fillColor="#FFB3C6" android:fillAlpha="0.5"
+        android:pathData="M32,52 A6,4 0 1,0 44,52 A6,4 0 1,0 32,52 Z"/>
+    <path android:fillColor="#FFB3C6" android:fillAlpha="0.5"
+        android:pathData="M76,52 A6,4 0 1,0 88,52 A6,4 0 1,0 76,52 Z"/>
+    <!-- Whiskers left -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M25,50 L50,51"/>
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M25,54 L50,54"/>
+    <!-- Whiskers right -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M70,51 L95,50"/>
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M70,54 L95,54"/>
+    <!-- Tail (wagging up) -->
+    <path android:strokeColor="#FF8C42" android:strokeWidth="5" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M90,75 Q112,60 110,80 Q108,95 98,90"/>
+</vector>

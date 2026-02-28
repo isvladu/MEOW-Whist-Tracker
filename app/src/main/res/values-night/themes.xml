@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.MEOWWhistTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/cat_brown</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/cat_cream</item>
+        <item name="colorSecondary">@color/cat_orange</item>
+        <item name="colorSecondaryVariant">@color/cat_orange_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/cat_brown</item>
+        <item name="colorSurface">@color/black</item>
+        <item name="colorOnSurface">@color/cat_cream</item>
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:windowBackground">@color/cat_brown</item>
+    </style>
+</resources>

@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">MEOW Whist Tracker</string>
+    <string name="setup_title">MEOW Whist</string>
+    <string name="setup_subtitle">Tracker de Whist Românesc</string>
+    <string name="number_of_players">Număr de jucători:</string>
+    <string name="player_names">Nume jucători</string>
+    <string name="player_hint">Jucător %d</string>
+    <string name="start_game">Începe Jocul</string>
+    <string name="resume_game">Continuă Jocul</string>
+    <string name="new_game">Joc Nou</string>
+    <string name="play_again">Joacă din Nou</string>
+    <string name="round_label" formatted="false">Runda %d / %d</string>
+    <string name="cards_label">%d cărți</string>
+    <string name="trump_label" formatted="false">Atu: %s %s</string>
+    <string name="bidding_title">Licitație</string>
+    <string name="tricks_title">Levate</string>
+    <string name="confirm_bids">Confirmă Licitațiile</string>
+    <string name="confirm_tricks">Confirmă Levatele</string>
+    <string name="next_round">Runda Următoare</string>
+    <string name="dealer_label">DISTRIBUITOR</string>
+    <string name="forbidden_bid_note">Nu poți licita %d</string>
+    <string name="bid_label">Licitație: %d</string>
+    <string name="total_tricks_validation" formatted="false">Total levate: %d / %d</string>
+    <string name="game_over">JOCUL S-A TERMINAT!</string>
+    <string name="final_scores">Scoruri Finale</string>
+    <string name="round_result_title">Rezultat Rundă</string>
+    <string name="hit_label">✓ Nimerit!</string>
+    <string name="miss_label">✗ Ratat</string>
+    <string name="score_delta_positive">+%d</string>
+    <string name="score_delta_negative">%d</string>
+    <string name="total_score_label">Total: %d</string>
+    <string name="saved_game_found">Există un joc salvat. Continui?</string>
+    <string name="yes">Da</string>
+    <string name="no">Nu</string>
+    <string name="previous_bids_label">Licitații plasate:</string>
+    <string name="submit_bid">Licitează!</string>
+    <string name="detailed_scoreboard_btn">Detalii ▶</string>
+    <string name="detailed_scoreboard_title">Scoreboard Detaliat</string>
+    <string name="premiu_label">Premiu</string>
+    <string name="premiu_desc">5 licitații corecte la rând (fără runde de 1 carte)</string>
+    <string name="view_history">Istoric Jocuri</string>
+    <string name="no_history">Nu există jocuri salvate.</string>
+    <string name="winner_label">Câștigător</string>
+</resources>

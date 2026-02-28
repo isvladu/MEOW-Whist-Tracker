@@ -1,0 +1,54 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- Body (slumped) -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M30,72 Q30,97 60,97 Q90,97 90,72 L90,57 Q90,42 75,37 Q70,35 60,35 Q50,35 45,37 Q30,42 30,57 Z"/>
+    <!-- Head -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M25,47 Q25,22 60,22 Q95,22 95,47 Q95,67 60,67 Q25,67 25,47 Z"/>
+    <!-- Left ear (drooped) -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M32,32 L18,15 L43,28 Z"/>
+    <!-- Right ear (drooped) -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M88,32 L102,15 L77,28 Z"/>
+    <!-- Left ear inner -->
+    <path android:fillColor="#FFD166"
+        android:pathData="M33,30 L21,17 L41,27 Z"/>
+    <!-- Right ear inner -->
+    <path android:fillColor="#FFD166"
+        android:pathData="M87,30 L99,17 L79,27 Z"/>
+    <!-- Sad eyes (droopy arcs) -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="3" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M40,40 Q45,46 50,40"/>
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="3" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M70,40 Q75,46 80,40"/>
+    <!-- Nose -->
+    <path android:fillColor="#EF476F"
+        android:pathData="M57,51 L60,54 L63,51 Q60,48 57,51 Z"/>
+    <!-- Sad mouth -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1.5" android:fillColor="#00000000"
+        android:pathData="M52,60 Q60,55 68,60"/>
+    <!-- Tear (teardrop) -->
+    <path android:fillColor="#87CEEB"
+        android:pathData="M45,49 Q44,53 46,54 Q48,53 47,49 Z"/>
+    <!-- Whiskers left -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M25,51 L50,52"/>
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M25,55 L50,55"/>
+    <!-- Whiskers right -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M70,52 L95,51"/>
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M70,55 L95,55"/>
+    <!-- Tail (drooped down) -->
+    <path android:strokeColor="#FF8C42" android:strokeWidth="5" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M90,82 Q105,90 100,108 Q98,115 90,112"/>
+</vector>

@@ -1,0 +1,66 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- Body -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M30,70 Q30,95 60,95 Q90,95 90,70 L90,55 Q90,40 75,35 Q70,33 60,33 Q50,33 45,35 Q30,40 30,55 Z"/>
+    <!-- Paw on chin -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M40,65 Q30,70 28,80 Q26,88 35,85 L50,72 Z"/>
+    <!-- Head -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M25,45 Q25,20 60,20 Q95,20 95,45 Q95,65 60,65 Q25,65 25,45 Z"/>
+    <!-- Left ear -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M30,30 L20,10 L45,25 Z"/>
+    <!-- Right ear -->
+    <path android:fillColor="#FF8C42"
+        android:pathData="M90,30 L100,10 L75,25 Z"/>
+    <!-- Left ear inner -->
+    <path android:fillColor="#FFD166"
+        android:pathData="M31,28 L23,13 L42,26 Z"/>
+    <!-- Right ear inner -->
+    <path android:fillColor="#FFD166"
+        android:pathData="M89,28 L97,13 L78,26 Z"/>
+    <!-- Left eye (circle r=5 at 45,42) -->
+    <path android:fillColor="#3D2B1F"
+        android:pathData="M40,42 A5,5 0 1,0 50,42 A5,5 0 1,0 40,42 Z"/>
+    <!-- Left eye shine -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M45.5,40 A1.5,1.5 0 1,0 48.5,40 A1.5,1.5 0 1,0 45.5,40 Z"/>
+    <!-- Right eye squinting arc -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="3" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M70,42 Q75,38 80,42"/>
+    <!-- Nose -->
+    <path android:fillColor="#EF476F"
+        android:pathData="M57,50 L60,53 L63,50 Q60,47 57,50 Z"/>
+    <!-- Thinking mouth (side smirk) -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1.5" android:fillColor="#00000000"
+        android:pathData="M55,56 Q60,58 67,55"/>
+    <!-- Whiskers left -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M25,50 L50,51"/>
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M25,54 L50,54"/>
+    <!-- Whiskers right -->
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M70,51 L95,50"/>
+    <path android:strokeColor="#3D2B1F" android:strokeWidth="1" android:fillColor="#00000000"
+        android:pathData="M70,54 L95,54"/>
+    <!-- Thought bubble small -->
+    <path android:fillColor="#FFD166" android:fillAlpha="0.7"
+        android:pathData="M92,28 A3,3 0 1,0 98,28 A3,3 0 1,0 92,28 Z"/>
+    <!-- Thought bubble medium -->
+    <path android:fillColor="#FFD166" android:fillAlpha="0.7"
+        android:pathData="M97,20 A5,5 0 1,0 107,20 A5,5 0 1,0 97,20 Z"/>
+    <!-- Thought bubble large -->
+    <path android:fillColor="#FFD166" android:fillAlpha="0.7"
+        android:pathData="M103,12 A7,7 0 1,0 117,12 A7,7 0 1,0 103,12 Z"/>
+    <!-- Tail -->
+    <path android:strokeColor="#FF8C42" android:strokeWidth="5" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M90,80 Q110,75 108,95 Q106,108 95,105"/>
+</vector>
