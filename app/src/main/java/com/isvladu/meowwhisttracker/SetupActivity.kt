@@ -3,6 +3,8 @@ package com.isvladu.meowwhisttracker
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.isvladu.meowwhisttracker.adapter.PlayerSetupAdapter
@@ -45,6 +47,33 @@ class SetupActivity : AppCompatActivity() {
         binding.btnHistory.setOnClickListener {
             startActivity(Intent(this, GameHistoryActivity::class.java))
         }
+
+        setupLanguageButton()
+    }
+
+    private fun setupLanguageButton() {
+        updateLanguageButton()
+        binding.btnLanguage.setOnClickListener {
+            val current = currentLanguageTag()
+            val next = if (current == "en") "ro" else "en"
+            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(next))
+        }
+    }
+
+    private fun currentLanguageTag(): String {
+        val locales = AppCompatDelegate.getApplicationLocales()
+        return if (!locales.isEmpty) locales[0]?.language ?: "ro" else "ro"
+    }
+
+    private fun updateLanguageButton() {
+        val tag = currentLanguageTag()
+        // Show the other language (what the user will switch to)
+        binding.btnLanguage.text = if (tag == "en") getString(R.string.lang_romanian) else getString(R.string.lang_english)
+    }
+
+    override fun recreate() {
+        super.recreate()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 
     override fun onResume() {

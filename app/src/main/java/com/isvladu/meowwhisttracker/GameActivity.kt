@@ -60,7 +60,7 @@ class GameActivity : AppCompatActivity() {
         binding.btnToggleScoreboard.setOnClickListener {
             scoreboardVisible = !scoreboardVisible
             binding.layoutScoreboard.visibility = if (scoreboardVisible) View.VISIBLE else View.GONE
-            binding.btnToggleScoreboard.text = if (scoreboardVisible) "▼ Scoreboard" else "▲ Scoreboard"
+            binding.btnToggleScoreboard.text = if (scoreboardVisible) getString(R.string.scoreboard_collapse) else getString(R.string.scoreboard_expand)
         }
 
         binding.btnDetailedScoreboard.setOnClickListener {
@@ -82,9 +82,8 @@ class GameActivity : AppCompatActivity() {
         val totalRounds = state.rounds.size
         val playerNames = state.players.map { it.name }
 
-        binding.tvRoundLabel.text = "Runda ${state.currentRoundIndex + 1}/$totalRounds"
-        binding.tvCardsLabel.text = "${round.cardCount} ${if (round.cardCount == 1) "carte" else "cărți"}"
-        binding.tvTrumpLabel.text = "Atu: ${round.trump.symbol} ${round.trump.label}"
+        binding.tvRoundLabel.text = getString(R.string.round_label, state.currentRoundIndex + 1, totalRounds)
+        binding.tvCardsLabel.text = if (round.cardCount == 1) getString(R.string.cards_label_one) else getString(R.string.cards_label, round.cardCount)
 
         val sbEntries = ScoreboardAdapter.buildEntries(state.players, null)
         scoreboardAdapter.update(sbEntries)
@@ -114,7 +113,7 @@ class GameActivity : AppCompatActivity() {
             if (currentIdx == round.dealerIndex) View.VISIBLE else View.GONE
         binding.tvBidForbidden.apply {
             visibility = if (forbidden != null) View.VISIBLE else View.GONE
-            text = if (forbidden != null) "Nu poți licita $forbidden" else ""
+            text = if (forbidden != null) getString(R.string.forbidden_bid_note, forbidden) else ""
         }
 
         val previousBids = (0 until state.currentBidderPosition).map { pos ->
@@ -185,7 +184,7 @@ class GameActivity : AppCompatActivity() {
             if (adapter.getTotal() != round.cardCount) {
                 Toast.makeText(
                     this,
-                    "Totalul levatelor trebuie să fie ${round.cardCount}!",
+                    getString(R.string.tricks_total_error, round.cardCount),
                     Toast.LENGTH_SHORT
                 ).show()
                 return@setOnClickListener
@@ -195,7 +194,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun updateTricksValidation(total: Int, cardCount: Int) {
-        binding.tvTricksValidation.text = "Total levate: $total / $cardCount"
+        binding.tvTricksValidation.text = getString(R.string.total_tricks_validation, total, cardCount)
         binding.tvTricksValidation.setTextColor(
             if (total == cardCount) getColor(R.color.success) else getColor(R.color.error_red)
         )
@@ -217,8 +216,8 @@ class GameActivity : AppCompatActivity() {
             val winners = state.players.filter { it.consecutiveHits > 0 && it.consecutiveHits % 5 == 0 }
             if (winners.isNotEmpty()) {
                 val names = winners.joinToString(", ") { it.name }
-                val verb = if (winners.size == 1) "a" else "au"
-                binding.tvPremiuAnnouncement.text = "🎉 $names $verb câștigat premiu!"
+                val strRes = if (winners.size == 1) R.string.premiu_won_singular else R.string.premiu_won_plural
+                binding.tvPremiuAnnouncement.text = getString(strRes, names)
                 binding.tvPremiuAnnouncement.visibility = View.VISIBLE
             } else {
                 binding.tvPremiuAnnouncement.visibility = View.GONE
@@ -227,6 +226,6 @@ class GameActivity : AppCompatActivity() {
             binding.tvPremiuAnnouncement.visibility = View.GONE
         }
 
-        binding.btnNextRound.text = if (state.isLastRound) "Finalizează Jocul" else getString(R.string.next_round)
+        binding.btnNextRound.text = if (state.isLastRound) getString(R.string.finish_game) else getString(R.string.next_round)
     }
 }

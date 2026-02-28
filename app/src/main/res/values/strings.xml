@@ -9,18 +9,21 @@
     <string name="resume_game">Continuă Jocul</string>
     <string name="new_game">Joc Nou</string>
     <string name="play_again">Joacă din Nou</string>
-    <string name="round_label" formatted="false">Runda %d / %d</string>
+    <string name="round_label">Runda %d / %d</string>
     <string name="cards_label">%d cărți</string>
+    <string name="cards_label_one">1 carte</string>
     <string name="trump_label" formatted="false">Atu: %s %s</string>
     <string name="bidding_title">Licitație</string>
     <string name="tricks_title">Levate</string>
     <string name="confirm_bids">Confirmă Licitațiile</string>
     <string name="confirm_tricks">Confirmă Levatele</string>
     <string name="next_round">Runda Următoare</string>
+    <string name="finish_game">Finalizează Jocul</string>
     <string name="dealer_label">DISTRIBUITOR</string>
     <string name="forbidden_bid_note">Nu poți licita %d</string>
     <string name="bid_label">Licitație: %d</string>
-    <string name="total_tricks_validation" formatted="false">Total levate: %d / %d</string>
+    <string name="total_tricks_validation">Total levate: %d / %d</string>
+    <string name="tricks_total_error">Totalul levatelor trebuie să fie %d!</string>
     <string name="game_over">JOCUL S-A TERMINAT!</string>
     <string name="final_scores">Scoruri Finale</string>
     <string name="round_result_title">Rezultat Rundă</string>
@@ -38,7 +41,14 @@
     <string name="detailed_scoreboard_title">Scoreboard Detaliat</string>
     <string name="premiu_label">Premiu</string>
     <string name="premiu_desc">5 licitații corecte la rând (fără runde de 1 carte)</string>
+    <string name="premiu_won_singular">🎉 %s a câștigat premiu!</string>
+    <string name="premiu_won_plural">🎉 %s au câștigat premiu!</string>
     <string name="view_history">Istoric Jocuri</string>
     <string name="no_history">Nu există jocuri salvate.</string>
     <string name="winner_label">Câștigător</string>
+    <string name="scoreboard_expand">▲ Scoreboard</string>
+    <string name="scoreboard_collapse">▼ Scoreboard</string>
+    <string name="language_btn">Limbă: %s</string>
+    <string name="lang_romanian">RO</string>
+    <string name="lang_english">EN</string>
 </resources>
